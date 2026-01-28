@@ -1,0 +1,17 @@
+# Example site-specific configuration
+# ====================================
+# Create files named by domain (e.g., www.example.com.yaml) to customize
+# rules for specific sites. Argus auto-detects these by matching the URL domain.
+#
+# Rule prefixes:
+#   ALLOW:    Accept this pattern as intentional design (don't flag as defect)
+#   IGNORE:   Skip checking this element entirely
+#   CRITICAL: This element MUST be visible/functional (always flag if broken)
+
+url: "https://www.bbc.com"
+rules:
+  - "ALLOW: Text overlaying video thumbnails (this is a stylistic choice)"
+  - "ALLOW: Carousel arrows hanging half-off the screen edge"
+  - "ALLOW: Headline text over hero images"
+  - "IGNORE: Live ticker or breaking news banners at the bottom"
+  - "IGNORE: Cookie consent banner (unless it blocks entire viewport)"

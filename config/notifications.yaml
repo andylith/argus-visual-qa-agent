@@ -1,0 +1,15 @@
+# Argus Notification Configuration
+#
+# Supported platforms (auto-detected from URL):
+#   - Slack: https://hooks.slack.com/services/...
+#   - Discord: https://discord.com/api/webhooks/...
+#   - Microsoft Teams: https://outlook.office.com/webhook/...
+#   - Power Automate: https://*.api.powerplatform.com/...
+#   - Generic: Any other URL (receives JSON payload)
+
+# Webhook URL - uncomment and set your webhook
+# webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+
+# When to send notifications
+notify_on_fail: true   # Send alert when status is FAIL
+notify_on_pass: false  # Send alert when status is PASS (usually too noisy)

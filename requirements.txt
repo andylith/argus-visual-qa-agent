@@ -1,0 +1,13 @@
+playwright>=1.40.0
+openai>=1.0.0
+anthropic>=0.18.0
+pyyaml>=6.0
+imagehash>=4.3.0
+Pillow>=10.0.0
+schedule
+requests
+python-dotenv>=1.0.0
+
+# Azure Key Vault (optional - for production secrets management)
+azure-identity>=1.15.0
+azure-keyvault-secrets>=4.7.0

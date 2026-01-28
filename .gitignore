@@ -1,0 +1,23 @@
+# Screenshots
+screenshots/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment
+.env
+
+# State and history files (contain runtime data)
+monitor_state.json
+spend_history.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

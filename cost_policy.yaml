@@ -1,0 +1,25 @@
+# Cost Policy for Argus
+# =====================
+# This is a CircuitBreaker-style policy file that controls API spending.
+#
+# The cost tracker will:
+# - Block calls that would exceed daily_limit_usd
+# - Block calls that would exceed single_call_limit_usd
+# - Refuse to use any model in blocked_models
+
+# Maximum spend per day (USD)
+# After this limit is reached, all API calls will be blocked until midnight UTC
+daily_limit_usd: 0.50  # $0.50/day - enough for ~100 analyses
+
+# Maximum spend per single API call (USD)
+# Prevents accidentally using an expensive model
+single_call_limit_usd: 1.00
+
+# Models that are never allowed
+# Use this to prevent expensive models from being used accidentally
+blocked_models:
+  - "gpt-4-turbo" # Very expensive, not needed for this use case
+  # - "gpt-4o"     # Uncomment to block high-res verification
+
+# Where to store spend history
+spend_file: "spend_history.json"

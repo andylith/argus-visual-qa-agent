@@ -1,0 +1,39 @@
+# Argus Client Configuration
+# ==========================
+# Define the sites to monitor and their notification webhooks.
+#
+# Each client can have multiple sites. Webhooks are optional - if not set,
+# results are only logged to console.
+
+clients:
+  # Example client configuration
+  - id: "example_client"
+    name: "Example Client"
+    # Webhook URL for notifications (Slack, Discord, Teams, or generic)
+    # webhook: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+    sites:
+      - url: "https://example.com"
+        name: "Example Homepage"
+        interval_minutes: 60
+      - url: "https://example.com/contact"
+        name: "Example Contact Page"
+        interval_minutes: 120
+
+  # Another example with webhook enabled
+  - id: "acme_corp"
+    name: "Acme Corporation"
+    webhook: "https://hooks.example.com/your-webhook-url"
+    sites:
+      - url: "https://acme.example.com"
+        name: "Acme Homepage"
+        interval_minutes: 30
+      - url: "https://acme.example.com/products"
+        name: "Acme Products"
+        interval_minutes: 60
+
+# Supported webhook platforms (auto-detected from URL):
+#   - Slack: https://hooks.slack.com/services/...
+#   - Discord: https://discord.com/api/webhooks/...
+#   - Microsoft Teams: https://outlook.office.com/webhook/...
+#   - Power Automate: https://*.api.powerplatform.com/...
+#   - Generic: Any other URL (receives JSON payload)
